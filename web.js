@@ -4,9 +4,10 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   fs.FileSync('index.html', function (err, data) {
- if (err) throw err;
-  output = data.buf.toStr();
-  response.send(output);
+      if (err) throw err;
+      data.toString('utf-8');
+ 
+
       }
 });
 
